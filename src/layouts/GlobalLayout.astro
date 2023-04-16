@@ -16,7 +16,7 @@ const { title = null , description = null  } = Astro.props;
   <head>
     <BaseHead pageTitle={title} pageDescription={description} />
     <script>
-       const systemThem = window.matchMedia("(prefers-color-scheme: dark)").mather? 'dark' : 'light';
+       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").mather? 'dark' : 'light';
        document.documentElement.setAttribute('data-theme', systemTheme);
     </script>
   </head>
