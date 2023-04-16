@@ -1,10 +1,9 @@
 ---
-import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
-import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
 
-const posts = (await getCollection('blog'));
+// const posts = (await getCollection('blog'));
 ---
 
 <GlobalLayout >
@@ -22,7 +21,6 @@ const posts = (await getCollection('blog'));
 					}
 				</ul>
 			</section> -->
-
   <div class='max-w-xl mx-auto py-8'>
     <h1 class='text-3xl font-bold mb-8 mt-10 text-center'>Next.js Example</h1>
     <!-- {posts.map((post, idx) => <PostCard key={idx} {...post} />)} -->
