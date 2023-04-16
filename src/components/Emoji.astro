@@ -1,0 +1,13 @@
+---
+export interface Props {
+  name: string;
+  class?: string;
+}
+const props = Astro.props;
+---
+
+<span
+  style={`background-image: url('/3d-icons/${props.name}.png');` }
+  class={`bg-center bg-cover   w-15 h-15 translate-y-2 scale-x--100 select-none ${props.class}`}
+>
+</span>

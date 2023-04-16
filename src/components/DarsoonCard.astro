@@ -1,0 +1,34 @@
+---
+import Card from './Card.astro';
+import StackLogo from './StackLogo.astro';
+---
+
+<Card
+  logoSrc='/darsoon/logo.png'
+  darkLogoSrc='/darsoon/logo-dark.png'
+  color='c-orange-11'
+  bg='bg-gradient-to-br from-orange4 via-tomato4 to-red4'
+  title='DARSOON'
+  href='/works/darsoon'
+>
+  <div class='dispaly-contents' slot='subtitle'>
+    Restarting <br /> a Start-up
+  </div>
+  <div slot='stack' class='display-contents'>
+    <StackLogo icon='i-logos-nextjs-icon' title='NEXTjs' />
+    <StackLogo icon='i-logos-supabase-icon' title='Supabase' />
+    <StackLogo icon='i-logos-react-query-icon' title='React Query' />
+    <StackLogo icon='i-logos-unocss' title='UnoCSS' />
+  </div>
+  <img
+    slot='showcase'
+    src='/darsoon/mockup.png'
+    alt=''
+    class={` lt-xs:(static w-6/5  mis-auto -mt-4 -mb-12 fade-y-from-30%-to-90% )  xs:abs  -z-1  xs:(w-60 right-0 top-10 ) sm:( right-0  top-10 w-85 ) md:(-right-15 top-5 w-110 ) drop-shadow-xl  `}
+  />
+  <ul slot='description'>
+    <li>A Brand new website was created.</li>
+    <li>+80k rows from Google Sheets to Supabase migrated</li>
+    <li>+100 hours of weekly manual work automated</li>
+  </ul>
+</Card>

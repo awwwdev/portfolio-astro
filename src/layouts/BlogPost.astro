@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import GlobalLayout from './GlobalLayout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description,  categories } = Astro.props;
+---
+<GlobalLayout  title={title} description={description} >
+	<slot name='head' slot='head' />
+	<div class="rtl max-width--article padding--page layout-stack-all">
+        <h1>{title}</h1>
+				<slot />
+      </div>
+	</GlobalLayout>

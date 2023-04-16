@@ -1,0 +1,35 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.0",
+    "@astrojs/sitemap": "^1.2.2",
+    "astro": "^2.2.0",
+    "astro-color-scheme": "^1.0.1",
+    "date-fns": "^2.29.3",
+    "unocss-preset-theme": "0.3.1"
+  },
+  "devDependencies": {
+    "@iconify-json/ic": "^1.1.13",
+    "@iconify-json/logos": "^1.1.24",
+    "@iconify-json/mdi": "^1.1.50",
+    "@iconify-json/ph": "^1.1.5",
+    "@radix-ui/colors": "^0.1.8",
+    "@unocss/core": "^0.51.4",
+    "@unocss/preset-icons": "^0.51.4",
+    "@unocss/preset-uno": "^0.51.4",
+    "@unocss/reset": "^0.51.4",
+    "@unocss/transformer-compile-class": "^0.51.4",
+    "@unocss/transformer-variant-group": "^0.51.4",
+    "hast-util-select": "^5.0.5",
+    "unocss": "^0.51.4"
+  }
+}

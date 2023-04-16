@@ -1,0 +1,64 @@
+---
+import '@unocss/reset/sanitize/sanitize.css';
+import '@unocss/reset/tailwind.css';
+import '../styles/reset.css';
+import 'uno.css';
+import '../styles/globals.css';
+import BaseHead from '../components/BaseHead.astro';
+import ThemeToggler from '../components/ThemeToggler.astro';
+import GetInTouch from '../components/GetInTouch.astro';
+import About from '../components/About.astro';
+const { title = null , description = null  } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en' data-theme='light' class='light'>
+  <head>
+    <BaseHead pageTitle={title} pageDescription={description} />
+    <script>
+       const systemThem = window.matchMedia("(prefers-color-scheme: dark)").mather? 'dark' : 'light';
+       document.documentElement.setAttribute('data-theme', systemTheme);
+    </script>
+  </head>
+
+  <body class='bg-gray1 text-gray12'>
+    <div class='h-full text-lg fw-300 line-height-1.7' style="grid-template-rows: auto 1fr auto;">
+      <header>
+        <nav class='py-3 flex justify-between max-w-page mx-auto sm:px-8 px-4'>
+          <a href='/' class='c-gray11' aria-label='Home'>
+            <img class='dark:filter-invert' src='/icons/home.svg' height={18} width={18} />
+          </a>
+          <ThemeToggler />
+        </nav>
+      </header>
+      <main id='main-content'>
+        <slot />
+        <section aria-label='About me' id='about' class='my-50 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
+          <About />
+        </section>
+        <section aria-label='Contact' id='contact' class='py16 pb32'>
+          <GetInTouch />
+        </section>
+      </main>
+      <footer class='pb6'>
+        <div class='mx-auto max-w-page sm:px-8 px-4 pb-3'>
+          <nav class='flex ac py-4 gap-4 c-gray11 text-note b-t-1 b-gray5'>
+            <a href='/#works'>Works</a>
+            <a href='/#About Me'>About Me</a>
+            <a href='/#Contact'>Contact</a>
+          </nav>
+          <div class='my-6'>
+            <p class='text-note c-gray11 text-2xs'>
+              Built by love. Powered by WebFlo... Just kidding! Here is
+              {'  '}
+              <a href='https://github.com/vashmeen/portfolio' target='_blank' rel='noreferrer'> the source code!</a>
+            </p>
+            <p class='text-note c-gray11 text-2xs'>
+              No AI was used during the creation of this website. 100% Pure Natural Intelligence!
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

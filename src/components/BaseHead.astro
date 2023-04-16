@@ -1,0 +1,75 @@
+---
+export interface Props {
+  pageTitle?: string;
+  pageDescription: string;
+  image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { image = '/placeholder-social.jpg', pageTitle, pageDescription } = Astro.props;
+const title = "Hamid's Portfolio";
+const description = 'Web Development and Design Portfolio';
+---
+
+<!-- Global Metadata -->
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<meta name='generator' content={Astro.generator} />
+<meta property='og:url' content='https://hamidd.dev' />
+
+<!-- Canonical URL -->
+<link rel='canonical' href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{pageTitle} Hamid&apos;s Portfolio</title>
+
+<!-- Open Graph / Facebook -->
+<meta property='og:type' content='website' />
+<meta property='og:url' content={Astro.url} />
+
+<meta property='og:title' content={title} />
+<meta name='description' content={pageDescription ?? description} />
+<meta property='og:description' content={description} />
+<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:site_name' content={title} />
+
+<!-- Twitter -->
+<meta property='twitter:card' content='summary_large_image' />
+<meta property='twitter:url' content={Astro.url} />
+<meta property='twitter:title' content={title} />
+<meta property='twitter:description' content={description} />
+<meta property='twitter:image' content={new URL(image, Astro.url)} />
+<meta property='og:type' content='website' />
+
+<meta name='theme-color' content='#000000' />
+<!-- <link rel="manifest" href="/manifest.json" /> -->
+<link rel='icon' href='/favicon.png' sizes='any' />
+<link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+<!-- Essential META Tags  -->
+<!-- <meta
+            property='og:image'
+            content=''
+          />  -->
+<meta name='twitter:card' content='summary_large_image' />
+
+<!-- Non-Essential Meta Tags, But Recommended  -->
+<meta name='twitter:image:alt' content={description} />
+
+<!-- TO SHOW LARGE THUMBNAILS IN GOOGLE RESULTS  -->
+<meta name='robots' content='max-snippet:20, max-image-preview:large' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+<meta charset='UTF-8' />
+<meta name='viewport' content='width=device-width' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta name='robots' content='noindex' />
+<meta name='googlebot' content='noindex' />
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous' />
+<link
+  href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=sora:wght@400;500;600;700;900&display=swap'
+  rel='stylesheet'
+/>
+

@@ -1,0 +1,112 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { format, parseISO } from 'date-fns';
+import InPostPostCard from '../../components/InPostPostCard.astro';
+import InPostStackLogo from '../../components/InPostStackLogo.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost >
+  <title slot='head'>{post.data.title}</title>
+  <article class='py-8 article max-w-page mx-auto sm:px-8 px-4'>
+    <div>
+      <h1 class='H1'>{post.data.title}</h1>
+      <time datetime={post.data.date} class='text-xs c-gray11 mb-1'>
+        {post.data.date}
+      </time>
+    </div>
+    {/* <div dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
+    <Content  />
+  </article>
+  <section class='mt-20 py-32'>
+    <div class='max-w-page mx-auto space-y-8'>
+      <h2 class='H2 c-gray8'>Other Works</h2>
+      <div class='flex flex-wrap gap-6'>
+        {
+          post.slug !== 'momenta' && (
+            <InPostPostCard
+              logoSrc='/momenta/logo.png'
+              darkLogoSrc='/momenta/logo-dark.png'
+              color='c-purple11'
+              bg='bg-gradient-to-br from-purple4 via-plum4 to-pink4'
+              title='MOMENTA'
+              href='/works/momenta'
+            >
+              <p slot='subtitle'>Two Crazy Landings</p>
+              <ul slot='stack' aria-label='Stack Used' class='mt-auto flex gap-2'>
+                <InPostStackLogo icon='i-logos-nextjs-icon' title='NEXTjs' />
+                <InPostStackLogo icon='i-logos-framer' title='Framer Motion' />
+                <InPostStackLogo icon='i-logos-figma' title='Figma' />
+              </ul>
+            </InPostPostCard>
+          )
+        }
+        {
+          post.slug !== 'dbilia' && (
+            <InPostPostCard
+              logoSrc='/dbilia/logo.png'
+              darkLogoSrc='/dbilia/logo.png'
+              color='c-violet11'
+              bg='bg-gradient-to-br from-violet4 via-blue4 to-cyan4'
+              title='DBILIA'
+              href='/works/dbilia'
+            >
+              <p slot='subtitle'>
+                {' '}
+                Refactoring
+                <br /> The Unreadable
+              </p>
+
+              <ul slot='stack' aria-label='Stack Used' class='mt-auto flex gap-2'>
+                <li class='w-[1.5em] h-[1.5em] rd-full flex jc ac bg-grayA-3'>
+                  <img src='/sc-logo2.png' alt='Styled Components' class='w-[0.8em] h-[0.8em] ' />
+                </li>
+                <InPostStackLogo icon='i-logos-sass' title='Sass and CSS' />
+                <InPostStackLogo icon='i-logos-react' title='Sass and CSS' />
+                <InPostStackLogo icon='i-logos-figma' title='Figma' />
+              </ul>
+            </InPostPostCard>
+          )
+        }
+        {
+          post.slug !== 'darsoon' && (
+            <InPostPostCard
+              logoSrc='/darsoon/logo.png'
+              darkLogoSrc='/darsoon/logo-dark.png'
+              color='c-orange-11'
+              bg='bg-orange4'
+              bg='bg-gradient-to-br from-orange4 via-tomato4 to-red4'
+              title='DARSOON'
+              href='/works/darsoon'
+            >
+              <p slot='subtitle'>
+                Restarting <br /> a Start-up
+              </p>
+              <ul slot='stack' aria-label='Stack Used' class='mt-auto flex gap-2'>
+                <li class='w-[1.5em] h-[1.5em] rd-full flex jc ac bg-grayA-3'>
+                  <img src='/sc-logo2.png' alt='Styled Components' class='w-[0.8em] h-[0.8em] ' />
+                </li>
+                <InPostStackLogo icon='i-logos-nextjs-icon' title='NEXTjs' />
+                <InPostStackLogo icon='i-logos-supabase-icon' title='Supabase' />
+                <InPostStackLogo icon='i-logos-react-query-icon' title='React Query' />
+                <InPostStackLogo icon='i-logos-unocss' title='UnoCSS' />
+              </ul>
+            </InPostPostCard>
+          )
+        }
+      </div>
+    </div>
+  </section>
+</BlogPost>

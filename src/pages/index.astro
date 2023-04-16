@@ -1,0 +1,32 @@
+---
+import GlobalLayout from '../layouts/GlobalLayout.astro';
+
+import DarsoonCard from '../components/DarsoonCard.astro';
+import DbiliaCard from '../components/DbiliaCard.astro';
+import MomentaCard from '../components/MomentaCard.astro';
+import Toolkit from '../components/Toolkit.astro';
+import Intro from '../components/Intro.astro';
+import Emoji from '../components/Emoji.astro';
+---
+
+<GlobalLayout>
+  <div class=''>
+    <section aria-label='introduction' class='rd-xl py-8 min-h-80 max-w-page mx-auto sm:px-8 px-4'>
+      <Intro />
+    </section>
+    <section aria-label='Works' id='works' class='mt-50 rd-xl max-w-page mx-auto'>
+      <div class='flex gap-1 items-baseline sm:px-8 px-4'>
+        <h2 class='H1'>Works</h2>
+        <Emoji name='fire' />
+      </div>
+      <ul class='mt-20 space-y-12 sm:space-y-32'>
+        <DarsoonCard />
+        <DbiliaCard />
+        <MomentaCard />
+      </ul>
+    </section>
+    <section aria-label='Toolkit' id='toolkit' class='mt-50 rd-xl max-w-page mx-auto'>
+      <Toolkit />
+    </section>
+  </div>
+</GlobalLayout>

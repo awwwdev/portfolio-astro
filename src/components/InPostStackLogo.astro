@@ -1,0 +1,10 @@
+---
+ const { icon = "", title = "", bgColor = "bg-gradient-to-r from-grayA-3 to-grayA-2" } = Astro.props;
+
+---
+
+  <li class={`w-[1.5em] h-[1.5em] rd-full flex jc ac  b-1.5 b-grayA-1 bg-origin-border ${bgColor} `}>
+    <span class={`inline-block ${icon} text-2xs`}>
+      <span class="sr-only">{title}</span>
+    </span>
+  </li>

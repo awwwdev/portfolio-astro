@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  class?: string;
+  icon?: string;
+  src?: string;
+  alt?: string;
+  size?: string;
+}
+
+const props = Astro.props;
+---
+
+<li
+  class={`toolkit__grid-item p-4 rd-4 flex jc ac b-1.5 b-grayA-3 empty:b-transparent bg-origin-border ${props.class}`}
+>
+  {props.icon && <Icon name={props.icon} alt={props.alt} class={`${props.size}`} />}
+  {props.src && <img src={props.src} alt={props.alt} class={`object-cover  ${props.size}`} />}
+</li>
