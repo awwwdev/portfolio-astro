@@ -1,6 +1,30 @@
 ---
 title: 'Momenta, Two Crazy Landings'
-date: '2023-02-03'
+date: 2023-02-03
+color: 'c-purple11'
+bg: 'bg-gradient-to-br from-purple4 via-plum4 to-pink4'
+logoSrc: '/momenta/logo.png'
+href: '/works/momenta'
+darkLogoSrc: '/momenta/logo-dark.png'
+features:
+  - Ideated and created a low-fidelity prototype
+  - Created complex and performant scroll animations
+  - Delivered the whole project in 2 weeks
+subtitle: Two Crazy  <br />  Landings
+img: <img
+  slot='showcase'
+  src='/momenta/mockup.png'
+  alt=''
+  class="lt-xs:static lt-xs:fade-y-from-30%-to-70% lt-xs:-mb-26 lt-xs:!-mt-5 lt-xs:-mie-5  lt-xs:w-4/5 lt-xs:mis-auto lt-xs:mt-8 lt-xs:fade-y-from-10%-to-80% lt-xs:!-mb-32  xs:abs  -z-1  xs:right-0 xs:top-5 xs:w-45  sm:-right-0  sm:top-5 sm:w-65 ) md:-right-13 md:-top-10 md:w-80 drop-shadow-xl `}
+  />
+
+stackLogos:
+  - icon: i-logos-sass
+    name: SASS and CSS
+  - icon: i-logos-react
+    name: React.js
+  - icon: i-logos-figma
+    name: Figma
 ---
 
 <br/>

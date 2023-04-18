@@ -23,16 +23,14 @@ import StackLogo from './StackLogo.astro';
     <StackLogo icon='i-logos-sass' title='Sass and CSS' />
     <StackLogo icon='i-logos-react' title='Sass and CSS' />
     <StackLogo icon='i-logos-figma' title='Figma' />
+    <img
+      slot='showcase'
+      src='/dbilia/mockup.png'
+      alt=''
+      class={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-2xl `}
+    />
   </div>
-  <img
-    slot='showcase'
-    src='/dbilia/mockup.png'
-    alt=''
-    class={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-2xl `}
-  />
   <ul slot='description'>
-    <li>Refactored +1000 LoC files with composable components</li>
-    <li>Decoupled and improved new user onboarding tour</li>
-    <li>Redesigned the whole UI and added Dark Mode</li>
+
   </ul>
 </Card>

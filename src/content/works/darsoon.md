@@ -1,9 +1,32 @@
 ---
-title: "Darsoon, Restarting a Startup"
-date: "2023-12-03"
+title: 'Darsoon, Restarting a Startup'
+subtitle: 'Restarting <br /> a Start-up'
+date: 2023-12-03
+color: 'c-orange-11'
+bg: 'bg-gradient-to-br from-orange4 via-tomato4 to-red4'
+href: '/works/darsoon'
+logoSrc: '/darsoon/logo.png'
+darkLogoSrc: '/darsoon/logo-dark.png'
+features:
+  - A Brand new website was created.
+  - +80k rows from Google Sheets to Supabase migrated
+  - +100 hours of weekly manual work automated
+
+img: <img
+  src='/darsoon/mockup.png'
+  alt=''
+  class="lt-xs:static lt-xs:w-6/5  lt-xs:mis-auto lt-xs:-mt-4 lt-xs:-mb-12 lt-xs:fade-y-from-30%-to-90%   xs:abs  -z-1  xs:w-60 xs:right-0 xs:top-10  sm:right-0  sm:top-10 sm:w-85 md:-right-15 md:top-5 md:w-110 drop-shadow-xl"
+  />
+stackLogos:
+  - icon: i-logos-nextjs-icon
+    name: NEXTjs
+  - icon: i-logos-supabase-icon
+    name: Supabase
+  - icon: i-logos-react-query-icon
+    name: React Query
+  - icon: i-logos-unocss
+    name: UnoCSS
 ---
-
-
 
 This project was the one I learned the most. It was a complete full-stack project, plus automated data migration.
 

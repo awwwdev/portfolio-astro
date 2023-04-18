@@ -1,6 +1,28 @@
 ---
-title: 'DBILIA, Refactoring the Unreadable'
-date: '2023-04-03'
+title: DBILIA, Refactoring the Unreadable
+date: 2023-04-03
+logoSrc: '/dbilia/logo.png'
+darkLogoSrc: /dbilia/logo.png
+color: c-violet11
+bg: bg-gradient-to-br from-violet4 via-blue4 to-cyan4
+href: /works/dbilia
+features:
+  - Refactored +1000 LoC files with composable components
+  - Decoupled and improved new user onboarding tour
+  - Redesigned the whole UI and added Dark Mode
+img: <img
+  slot='showcase'
+  src='/dbilia/mockup.png'
+  alt=''
+  class="lt-xs:static  lt-xs:w-4/5 lt-xs:mis-auto lt-xs:-mb-26 lt-xs:-mt-10 lt-xs:fade-y-from-40%-to-70%   xs:abs  -z-1  xs:w-40 xs:right-0 xs:top-0 sm:-right-0 sm:-top-0 sm:w-60)  md:-right-15 md:-top-5 md:w-80 drop-shadow-2xl"
+  />
+stackLogos:
+  - icon: i-logos-nextjs-icon
+    name: NEXTjs
+  - icon: i-logos-framer
+    name: Framer Motion
+  - icon: i-logos-figma
+    name: Figma
 ---
 
 <br/>

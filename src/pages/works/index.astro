@@ -2,28 +2,53 @@
 import { getCollection } from 'astro:content';
 
 import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import Card from '../../components/Card.astro';
+import StackLogo from '../../components/StackLogo.astro';
+import PostContent from '../../components/PostContent.astro';
 
-// const posts = (await getCollection('blog'));
+const posts = await getCollection('works');
 ---
 
-<GlobalLayout >
-  <!-- <section class="max-width--page padding--page rtl">
-		<ul class='card-grid'>
-			{
-						posts.map((post) => (
-							    <ArticleCard
-                  title={post.data.title}
-                  excerpt={post.data.description}
-                  slug={post.slug}
-                  link={`/posts/${post.slug}`}
-                />
-						))
-					}
-				</ul>
-			</section> -->
-  <div class='max-w-xl mx-auto py-8'>
-    <h1 class='text-3xl font-bold mb-8 mt-10 text-center'>Next.js Example</h1>
-    <!-- {posts.map((post, idx) => <PostCard key={idx} {...post} />)} -->
+<GlobalLayout>
+  <div class='max-w-page mx-auto py-8'>
+    <h1 class='text-3xl font-bold mb-8 mt-10 text-center'>My Works</h1>
+    <ul class="space-y-8">
+      {
+        posts.map((post, index) => {
+          return (
+            <Card
+              logoSrc={post.data.logoSrc}
+              darkLogoSrc={post.data.darkLogoSrc}
+              color={post.data.color}
+              bg={post.data.bg}
+              title={post.data.title}
+              href={post.data.href}
+            >
+              <div slot='subtitle' class='dispaly-contents'>
+                <Fragment set:html={post.data.subtitle} />
+              </div>
+              <ul slot='stack' class='display-contents'>
+                {post.data.stackLogos?.map((sl) => (
+                  <li
+                    class={`w-[2.5em] h-[2.5em] rd-full flex jc ac b-1.5 b-grayA-2 bg-origin-border ${'bg-gradient-to-r from-grayA-3 to-grayA-2'} `}
+                  >
+                    <span class={`inline-block ${sl.icon}`}>
+                      <span class='sr-only'>{sl.name}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Fragment slot='showcase' set:html={post.data.img} />
+              <ul slot='card-decription'>
+                {post.data.features?.map((feat) => (
+                  <li>{feat}</li>
+                ))}
+              </ul>
+            </Card>
+          );
+        })
+      }
+    </ul>
   </div>
 </GlobalLayout>
 <style>
