@@ -2,17 +2,17 @@
 import { CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 // import { format, parseISO } from 'date-fns';
-import InPostPostCard from '../../components/InPostPostCard.astro';
-import InPostStackLogo from '../../components/InPostStackLogo.astro';
+// import InPostPostCard from '../../components/InPostPostCard.astro';
+// import InPostStackLogo from '../../components/InPostStackLogo.astro';
 
 export async function getStaticPaths() {
-  const works = await getCollection('works');
-  return works.map((post) => ({
+  const blog = await getCollection('blog');
+  return blog.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'works'>;
+type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
@@ -30,9 +30,9 @@ const { Content } = await post.render();
     {/* <div dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
     <Content  />
   </article>
-  <section class='mt-20 py-32'>
+  <!-- <section class='mt-20 py-32'>
     <div class='max-w-page mx-auto space-y-8'>
-      <h2 class='H2 c-gray8'>Other Works</h2>
+      <h2 class='H2 c-gray8'>Other Blog</h2>
       <div class='flex flex-wrap gap-6'>
         {
           post.slug !== 'momenta' && (
@@ -108,5 +108,5 @@ const { Content } = await post.render();
         }
       </div>
     </div>
-  </section>
+  </section> -->
 </BlogPost>

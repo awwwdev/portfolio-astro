@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+
+import GlobalLayout from '../../layouts/GlobalLayout.astro';
+
+// const posts = (await getCollection('blog'));
+---
+
+<GlobalLayout >
+  <!-- <section class="max-width--page padding--page rtl">
+		<ul class='card-grid'>
+			{
+						posts.map((post) => (
+							    <ArticleCard
+                  title={post.data.title}
+                  excerpt={post.data.description}
+                  slug={post.slug}
+                  link={`/posts/${post.slug}`}
+                />
+						))
+					}
+				</ul>
+			</section> -->
+  <div class='max-w-xl mx-auto py-8'>
+    <h1 class='text-3xl font-bold mb-8 mt-10 text-center'>Next.js Example</h1>
+    <!-- {posts.map((post, idx) => <PostCard key={idx} {...post} />)} -->
+  </div>
+</GlobalLayout>
+<style>
+  ul {
+    list-style-type: none;
+    padding: unset;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li :global(time) {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #595959;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+</style>
