@@ -1,6 +1,6 @@
 ---
 title: 'Fresh Bootcamp graduate?'
-subtitle: 'Check this list'
+subtitle: 'Check out this list!'
 date: 2023-04-15
 ---
 
