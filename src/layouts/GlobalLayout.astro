@@ -8,7 +8,8 @@ import BaseHead from '../components/BaseHead.astro';
 import ThemeToggler from '../components/ThemeToggler.astro';
 import GetInTouch from '../components/GetInTouch.astro';
 import About from '../components/About.astro';
-const { title = null , description = null  } = Astro.props;
+import ShortAbout from '../components/ShortAbout.astro';
+const { title = null, description = null } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,13 +17,13 @@ const { title = null , description = null  } = Astro.props;
   <head>
     <BaseHead pageTitle={title} pageDescription={description} />
     <script>
-       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").mather? 'dark' : 'light';
-       document.documentElement.setAttribute('data-theme', systemTheme);
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').mather ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', systemTheme);
     </script>
   </head>
 
   <body class='bg-gray1 text-gray12'>
-    <div class='h-full text-lg fw-300 line-height-1.7' style="grid-template-rows: auto 1fr auto;">
+    <div class='h-full text-lg fw-300 line-height-1.7' style='grid-template-rows: auto 1fr auto;'>
       <header>
         <nav class='py-3 flex justify-between max-w-page mx-auto sm:px-8 px-4'>
           <a href='/' class='c-gray11' aria-label='Home'>
@@ -33,9 +34,11 @@ const { title = null , description = null  } = Astro.props;
       </header>
       <main id='main-content'>
         <slot />
-        <section aria-label='About me' id='about' class='my-50 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
-          <About />
-        </section>
+        <slot name='about'>
+          <section aria-label='About me' id='about' class='mt-50 mb-20 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
+            <ShortAbout />
+          </section>
+        </slot>
         <section aria-label='Contact' id='contact' class='py16 pb32'>
           <GetInTouch />
         </section>

@@ -7,6 +7,8 @@ import MomentaCard from '../components/MomentaCard.astro';
 import Toolkit from '../components/Toolkit.astro';
 import Intro from '../components/Intro.astro';
 import Emoji from '../components/Emoji.astro';
+import About from '../components/About.astro';
+import BlogSection from '../components/BlogSection.astro';
 ---
 
 <GlobalLayout>
@@ -27,6 +29,21 @@ import Emoji from '../components/Emoji.astro';
     </section>
     <section aria-label='Toolkit' id='toolkit' class='mt-50 rd-xl max-w-page mx-auto'>
       <Toolkit />
+    </section>
+    <section
+      aria-label='Blog'
+      id='blog'
+      class='my-50 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'
+    >
+      <BlogSection />
+    </section>
+    <section
+      slot='about'
+      aria-label='About me'
+      id='about'
+      class='my-50 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'
+    >
+      <About />
     </section>
   </div>
 </GlobalLayout>

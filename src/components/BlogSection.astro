@@ -1,0 +1,49 @@
+---
+import Emoji from './Emoji.astro';
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+---
+
+<div class='flex gap-1 items-baseline mb-20'>
+  <h2 class='H1'>Blog</h2>
+  <!-- <Emoji name='dino' /> -->
+</div>
+<div class='space-y-4 c-gray11'>
+  <div class='max-w-page mx-auto py-8'>
+    <ul class='flex gap'>
+      {
+        posts.map((post, index) => {
+          return (
+            <li class='p-6 b-1 rd-xl  '>
+              <article class='block'>
+                <h2 class='H2'>{post.data.title}</h2>
+                <time class='c-gray11 text-xs block '>{post.data.date}</time>
+
+                <a href={`/blog/${post.slug}`} class='mt-12 inline-block af-i-ph-arrow-right btn-ghost'>
+                  Read More
+                </a>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <style>
+    ul {
+      list-style-type: none;
+      padding: unset;
+    }
+    ul li {
+      display: flex;
+    }
+    ul li :global(time) {
+      flex: 0 0 130px;
+      font-style: italic;
+      color: #595959;
+    }
+    ul li a:visited {
+      color: #8e32dc;
+    }
+  </style>
+</div>
