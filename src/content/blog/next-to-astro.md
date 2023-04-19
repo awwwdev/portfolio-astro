@@ -1,7 +1,7 @@
 ---
 title: 'Next.js to Astro'
 subtitle: 'A fast skim on migrating fron Next.js to Astro'
-date: '2023-04-10'
+date: 2023-04-10
 ---
 
 I migrated a Next.js website to Astro. Here is a how it went!
