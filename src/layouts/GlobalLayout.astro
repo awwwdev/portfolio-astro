@@ -17,7 +17,7 @@ const { title = null, description = null } = Astro.props;
   <head>
     <BaseHead pageTitle={title} pageDescription={description} />
     <script>
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').mather ? 'dark' : 'light';
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', systemTheme);
     </script>
   </head>
@@ -35,9 +35,9 @@ const { title = null, description = null } = Astro.props;
       <main id='main-content'>
         <slot />
         <slot name='about'>
-          <section aria-label='About me' id='about' class='mt-50 mb-20 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
+          <!-- <section aria-label='About me' id='about' class='mt-50 mb-20 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
             <ShortAbout />
-          </section>
+          </section> -->
         </slot>
         <section aria-label='Contact' id='contact' class='py16 pb32'>
           <GetInTouch />

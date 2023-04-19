@@ -1,5 +1,6 @@
 ---
-title: 'From Next.js to Astro.js'
+title: 'Next.js to Astro'
+subtitle: 'A fast skim on migrating fron Next.js to Astro'
 date: '2023-04-10'
 ---
 

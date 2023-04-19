@@ -1,6 +1,7 @@
 ---
-title: "Is Mozilla Dead"
-date: "2023-02-10"
+title: 'Is Mozilla Dead?'
+subtitle: "A review on Mozilla's future"
+date: '2023-02-10'
 ---
 
 # Is Mozilla dead?

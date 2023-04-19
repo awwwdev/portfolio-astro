@@ -25,6 +25,7 @@ const works = defineCollection({
 const blog = defineCollection({
   schema: z.object({
     title: z.string(),
+    subtitle: z.string(),
     date: z.string(),
   }),
 });
