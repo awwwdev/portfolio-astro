@@ -8,8 +8,8 @@ const posts = await getCollection('blog');
   <h2 class='H1'>Blog</h2>
   <!-- <Emoji name='dino' /> -->
 </div>
-<div class=' c-gray11'> 
-  <ul class='flex gap-8'>
+<div class=' c-gray11 overflow-x-auto pb-8'> 
+  <ul class='flex gap-8 '>
     {
       posts.map((post, index) => {
         return (
