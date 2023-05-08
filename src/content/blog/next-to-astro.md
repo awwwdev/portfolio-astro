@@ -7,7 +7,9 @@ date: 2023-04-10
 I migrated a Next.js website to Astro. Here is a how it went!
 
 <figure>
-<video src='/next-to-astro.mp4' class='rd-xl b-1 shadow-xl block'  controls playsinline muted autoplay /> 
+<!-- <video src='/next-to-astro.mp4' class='rd-xl b-1 shadow-xl block'  controls playsinline muted autoplay /> -->
+
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/824922485?h=a31e725f50&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="next-to-astro"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 </figure>
 
 The video is a 5 hours process with 100x speed.
