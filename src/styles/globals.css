@@ -6,9 +6,22 @@
 .max-w-article {
   max-width: min(90vw, 70ch);
 }
-.max-w-page {
-  max-width: min(100vw - 32px, 50rem);
+:root {
+  --max-w-page: min(100vw - 32px, 50rem);
+  --mis-page: max(16px, 50vw - 25rem);
 }
+.max-w-page {
+  max-width: var(--max-w-page);
+}
+
+.mis_page-first-child:first-child {
+  margin-inline-start: var(--mis-page);
+}
+.mis_page-last-child:last-child {
+  margin-inline-end: var(--mis-page);
+}
+
+
 
 html {
   scroll-behavior: smooth;
@@ -16,7 +29,7 @@ html {
 
 body,
 .font-family-inter {
-  font-family: "Inter", "Roboto", system-ui, sans-serif;
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
 }
 
 code {
@@ -30,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Sora", "Inter", "Roboto", system-ui, sans-serif;
+  font-family: 'Sora', 'Inter', 'Roboto', system-ui, sans-serif;
 }
 
 html {

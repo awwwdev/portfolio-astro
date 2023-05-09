@@ -1,36 +1,37 @@
 ---
-import Emoji from './Emoji.astro';
 import { getCollection } from 'astro:content';
+import { formatTimeAgo } from '../util/formatter';
 const posts = await getCollection('blog');
 ---
 
-<div class='flex gap-1 items-baseline mb-20'>
+<div class='flex gap-1 items-baseline mb-20 max-w-page mx-auto sm:px-8 px-4'>
   <h2 class='H1'>Blog</h2>
   <!-- <Emoji name='dino' /> -->
 </div>
-<div class=' c-gray11 overflow-x-auto pb-8'> 
-  <ul class='flex gap-8 '>
-    {
-      posts.map((post, index) => {
-        return (
-          <li class='p-8 b-1 b-gray6 rd-xl   '>
-            <article class='flex flex-col gap-4 min-w-80 min-h-80'>
+
+<ul class='flex gap-8 c-gray11 overflow-x-auto pb-8'>
+  {
+    posts.map((post, index) => {
+      return (
+        <li class='p-8 b-1 b-gray6 rd-xl mis_page-first-child  mis_page-last-child  '>
+          <article class='flex flex-col gap-4 min-w-80 min-h-80'>
+            <div class='space-y-4'>
               <h2 class='H2'>{post.data.title}</h2>
-              <time class='c-gray11 text-xs block '>{post.data.date}</time>
+              <time class='c-gray11 text-xs block '>{formatTimeAgo(post.data.date)}</time>
               <p>{post.data.subtitle}</p>
-              <a
-                href={`/blog/${post.slug}`}
-                class='flex-self-end mt-auto mis-auto w-fit inline-block af-i-ph-arrow-right btn-ghost'
-              >
-                Read More
-              </a>
-            </article>
-          </li>
-        );
-      })
-    }
-  </ul>
-</div>
+            </div>
+            <a
+              href={`/blog/${post.slug}`}
+              class='flex-self-end mt-auto mis-auto w-fit inline-block af-i-ph-arrow-right btn-ghost !c-gray12'
+            >
+              Read More
+            </a>
+          </article>
+        </li>
+      );
+    })
+  }
+</ul>
 <style>
   ul {
     list-style-type: none;
