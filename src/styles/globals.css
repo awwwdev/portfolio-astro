@@ -14,6 +14,11 @@
   max-width: var(--max-w-page);
 }
 
+
+.scroll_parent {
+  scroll-margin: var(--mis-page);
+  scroll-padding: var(--mis-page);
+}
 .mis_page-first-child:first-child {
   margin-inline-start: var(--mis-page);
 }
