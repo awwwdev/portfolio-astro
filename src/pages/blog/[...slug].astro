@@ -1,6 +1,8 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { formatTimeAgo } from '../../util/formatter';
+
 // import { format, parseISO } from 'date-fns';
 // import InPostPostCard from '../../components/InPostPostCard.astro';
 // import InPostStackLogo from '../../components/InPostStackLogo.astro';
@@ -18,17 +20,17 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost >
+<BlogPost>
   <title slot='head'>{post.data.title}</title>
   <article class='py-8 article max-w-page mx-auto sm:px-8 px-4'>
     <div>
       <h1 class='H1'>{post.data.title}</h1>
       <time datetime={post.data.date} class='text-xs c-gray11 mb-1'>
-        {post.data.date}
+        {formatTimeAgo(post.data.date)}
       </time>
     </div>
     {/* <div dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
-    <Content  />
+    <Content />
   </article>
   <!-- <section class='mt-20 py-32'>
     <div class='max-w-page mx-auto space-y-8'>
