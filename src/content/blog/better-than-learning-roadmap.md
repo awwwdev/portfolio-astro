@@ -17,5 +17,3 @@ Initally I wanted to call it learning checklist, but actually it's not intrisnic
 It's a map. Like a city map. A learner is like a tourist, and decides which places to visit and in what order. 
 
 In the following posts I will share my learning maps for HTML, CSS, JS, UI design, and so many cool stuff.
-
-So stay tuned. 
