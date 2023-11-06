@@ -1,8 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
+type PostType = CollectionEntry<"blog">;
 import GlobalLayout from '../../layouts/GlobalLayout.astro';
 const posts = await getCollection('blog');
+
 ---
 
 <GlobalLayout>
@@ -10,19 +12,22 @@ const posts = await getCollection('blog');
     <h1 class='text-9xl fw-700 mb-32 mt-10'>Blog</h1>
     <ul class='space-y-8'>
       {
-        posts.map((post, index) => {
-          return (
-            <li  class='p-6 b-1 rd-xl  '>
-              
-              <article class="block">
-                <h2 class='H2'>{post.data.title}</h2>
-                <time class='c-gray11 text-xs block '>{post.data.date}</time>
+        [...posts.filter((post) => !post.data.draft)]
+          .sort((p1: PostType, p2: PostType) => p2.data.date.getTime() - p1.data.date.getTime())
+          .map((post, index) => {
+            return (
+              <li class='p-6 b-1 rd-xl  '>
+                <article class='block'>
+                  <h2 class='H2'>{post.data.title}</h2>
+                  <time class='c-gray11 text-xs block '>{post.data.date}</time>
 
-                <a href={`/blog/${post.slug}`} class="mt-12 inline-block af-i-ph-arrow-right btn-ghost" >Read More</a>
-              </article>
-            </li>
-          );
-        })
+                  <a href={`/blog/${post.slug}`} class='mt-12 inline-block af-i-ph-arrow-right btn-ghost'>
+                    Read More
+                  </a>
+                </article>
+              </li>
+            );
+          })
       }
     </ul>
   </div>
