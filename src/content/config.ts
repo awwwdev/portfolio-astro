@@ -30,4 +30,12 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog, works };
+
+const tips = defineCollection({
+  schema: z.object({
+    title: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
+export const collections = { blog, works , tips };
