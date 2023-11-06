@@ -9,6 +9,7 @@ import Intro from '../components/Intro.astro';
 import Emoji from '../components/Emoji.astro';
 import About from '../components/About.astro';
 import BlogSection from '../components/BlogSection.astro';
+import TipsSection from '../components/TipsSection.astro';
 ---
 
 <GlobalLayout>
@@ -32,6 +33,9 @@ import BlogSection from '../components/BlogSection.astro';
     </section>
     <section aria-label='Blog' id='blog' class='my-50 rd-xl'>
       <BlogSection />
+    </section>
+     <section aria-label='Blog' id='blog' class='my-50 rd-xl'>
+      <TipsSection />
     </section>
     <section
       slot='about'

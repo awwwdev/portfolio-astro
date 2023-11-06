@@ -1,0 +1,29 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import { Markdown } from '@astropub/md';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const tips = await getCollection('tips');
+  return tips.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+---
+
+<BlogPost>
+  <title slot='head'>{post.data.title}</title>
+  <article class='py-8 article max-w-page mx-auto sm:px-8 px-4'>
+ 
+<h1 class="H1">
+  <Markdown.Inline of={post.data.title} />
+</h1>
+    <Content />
+  </article>
+</BlogPost>
