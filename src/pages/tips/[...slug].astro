@@ -10,20 +10,32 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<'tips'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-
 ---
 
 <BlogPost>
   <title slot='head'>{post.data.title}</title>
   <article class='py-8 article max-w-page mx-auto sm:px-8 px-4'>
- 
-<h1 class="H1">
-  <Markdown.Inline of={post.data.title} />
-</h1>
+    <h1 class='H1'>
+      <Markdown.Inline of={post.data.title} />
+    </h1>
     <Content />
+    {
+      post.data.tags && (
+        <div>
+          <h2 class="sr-only">Tags</h2>
+          <ul class="flex gap-2">
+            {post.data?.tags.map((tag) => (
+              <li>
+                <span class='px-2.5 c-violet11  flex  items-center rounded-full bg-violet4'>{tag}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </article>
 </BlogPost>
