@@ -27,6 +27,7 @@ const blog = defineCollection({
     title: z.string(),
     subtitle: z.string(),
     date: z.date(),
+    draft: z.boolean().optional()
   }),
 });
 
@@ -35,6 +36,7 @@ const tips = defineCollection({
   schema: z.object({
     title: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    draft: z.boolean().optional()
   }),
 });
 
