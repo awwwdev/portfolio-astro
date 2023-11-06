@@ -6,7 +6,7 @@ tags:
 - responsiveness
 ---
 
-A 3 line pragraph could be 5 line in smaller screen. You need to allow element's height to be automatically calculated.
+A 3 lines pragraph could be 5 lines in a smaller screen. You need to allow element's height to be automatically calculated.
 
 If you do `height: 5rem` your text might need more height in a smaller screen and text overflows (goes out of the element box).
 
