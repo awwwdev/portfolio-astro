@@ -11,9 +11,8 @@ const posts = await getCollection('tips');
 </div>
 <ul class='mx-auto max-w-page  flex flex-wrap gap-4 c-gray11  pb-8 scroll_pranet'>
   {
-    posts.map(async (post) => {
+    posts.filter(post => !post.data.draft).map(async (post) => {
       const { Content, headings } = await post.render();
-      console.log("🚀 ~ Content:", Content)
       return (
         <li class='    '>
           <TipCard headings={headings} title={post.data.title} slug={post.slug} />
