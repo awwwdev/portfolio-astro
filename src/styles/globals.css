@@ -27,6 +27,8 @@
 }
 
 
+/* ELEMENT STYLES =============================================== */
+
 
 html {
   scroll-behavior: smooth;
@@ -40,6 +42,8 @@ body,
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
     monospace;
+
+    
 }
 
 h1,
@@ -73,6 +77,12 @@ textarea,
 a {
   outline-offset: 3px;
 }
+
+pre {
+
+}
+
+/* END OF ELEMENTS ========================================= */
 
 .before\:inline-block::before {
   display: inline-block;
@@ -114,7 +124,7 @@ img {
 }
 
 .dark ::selection {
-  background: rgb(255, 143, 121);
+   background: rgb(122, 33, 15);
 }
 
 .toolkit__grid {
@@ -127,4 +137,13 @@ img {
 
 .toolkit__grid-item {
   min-height: 3.75rem;
+}
+
+.astro-code {
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.astro-code ::selection {
+  background: rgb(122, 33, 15);
 }
