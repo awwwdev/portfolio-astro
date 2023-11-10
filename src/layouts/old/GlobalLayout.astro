@@ -1,16 +1,16 @@
 ---
 import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/tailwind.css';
-import '../styles/reset.css';
+import '../../styles/reset.css';
 import 'uno.css';
-import '../styles/globals.css';
-import BaseHead from '../components/BaseHead.astro';
-import ThemeToggler from '../components/ThemeToggler.astro';
-import GetInTouch from '../components/old/GetInTouch.astro';
+import '../../styles/globals.css';
+import BaseHead from '../../components/BaseHead.astro';
+import ThemeToggler from '../../components/ThemeToggler.astro';
+import GetInTouch from '../../components/old/GetInTouch.astro';
 const { title = null, description = null } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang='en' data-theme='light' class='light'>
   <head>
     <BaseHead pageTitle={title} pageDescription={description} />
@@ -52,7 +52,9 @@ const { title = null, description = null } = Astro.props;
             <p class='text-note c-gray11 text-2xs'>
               Built by love. Powered by WebFlo... Just kidding! Here is
               {'  '}
-              <a href='https://github.com/vashmeen/portfolio-astro' target='_blank' rel='noreferrer'> the source code!</a>
+              <a href='https://github.com/vashmeen/portfolio-astro' target='_blank' rel='noreferrer'>
+                the source code!</a
+              >
             </p>
             <p class='text-note c-gray11 text-2xs'>
               No AI was used during the creation of this website. 100% Pure Natural Intelligence!

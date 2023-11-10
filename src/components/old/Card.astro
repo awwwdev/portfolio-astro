@@ -1,0 +1,59 @@
+---
+export interface Props {
+  title: string;
+  logoSrc: string;
+  darkLogoSrc: string;
+  showCaseSrc?: string;
+  showCaseSize?: string;
+  // showCase?: React.ReactNode;
+  href: string;
+  // subtitle: React.ReactNode;
+  // children: React.ReactNode;
+  // stack: React.ReactNode;
+  bg?: string;
+  color?: string;
+}
+
+const {
+  logoSrc = '',
+  darkLogoSrc = '',
+  title = '',
+  href,
+  color = 'c-violet11',
+  bg = 'bg-violet4',
+} = Astro.props; // btnColor="bg-violet6"
+---
+
+<article
+  class={`rd-6 rel isolate b-1.5 b-grayA-3 dark:b-grayA-4 bg-origin-border  min-h-150 sm:min-h-180 p-6 sm:p-10 flex flex-col ${bg}`}
+>
+<div class=''>
+  <img src={darkLogoSrc} alt={title} class='dark:block display-none h-5 w-auto lt-sm:mt-1' />
+  <img src={logoSrc} alt={title} class='dark:display-none h-5 w-auto lt-sm:mt-1' />
+</div>
+<slot name='showcase' />
+  <h3 class={`lt-xs:mt-0 mt-16 block  fw-900 text-4xl md:text-6xl ${color} `}>
+    <span class='sr-only leading-loose'>{title} ,</span>
+    <!-- {subtitle} -->
+    <slot name='subtitle' />
+  </h3>
+  <ul title='Stack Used' class='mt-8 flex gap-2'>
+    <slot name='stack' />
+    <!-- {stack} -->
+  </ul>
+  <div class='mt-16 text-lg leading-loose c-grayA-11 ls-tighter'>
+    <!-- {children} -->
+    <slot name='description' />
+    <slot name='card-decription' />
+    <slot />
+  </div>
+  <div class='mt-auto flex justify-end'>
+    <a
+      href={href}
+      class={`flex ac jc p4 sm:p6 lt-xs:mt-10 rd-xl b-1.5 b-grayA-3 bg-grayA-1 hover:(bg-grayA-2)  ${color}  `}
+    >
+      <span class='i-ph-arrow-right inline-block text-3xl sm:text-4xl'></span>
+      <span class='sr-only'> Learn more</span>
+    </a>
+  </div>
+</article>

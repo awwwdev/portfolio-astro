@@ -1,0 +1,37 @@
+---
+import Card from '../Card.astro';
+import StackLogo from './StackLogo.astro';
+---
+
+<Card
+  logoSrc='/momenta/logo.png'
+  darkLogoSrc='/momenta/logo-dark.png'
+  color='c-purple11'
+  bg='bg-gradient-to-br from-purple4 via-plum4 to-pink4'
+  title='MOMENTA'
+  href='/works/momenta'
+>
+  <div class='dispaly-contents' slot='subtitle'>
+    Two Crazy
+    <br /> Landings
+  </div>
+  <div slot='stack' class='display-contents'>
+    <li class='w-[2.5em] h-[2.5em] rd-full flex jc ac bg-grayA-3'>
+      <img src='/sc-logo2.png' alt='Styled Components' class='w-[1.2em] h-[1.2em]' />
+    </li>
+    <StackLogo icon='i-logos-nextjs-icon' title='NEXTjs' />
+    <StackLogo icon='i-logos-framer' title='Framer Motion' />
+    <StackLogo icon='i-logos-figma' title='Figma' />
+  </div>
+  <img
+    slot='showcase'
+    src='/momenta/mockup.png'
+    alt=''
+    class={`  lt-xs:(static fade-y-from-30%-to-70% -mb-26 !-mt-5 -mie-5  w-4/5 mis-auto mt-8 fade-y-from-10%-to-80% !-mb-32)  xs:abs  -z-1  xs:( right-0 top-5 w-45 ) sm:( -right-0  top-5 w-65 ) md:(-right-13 -top-10 w-80) drop-shadow-xl `}
+  />
+  <ul slot='description'>
+    <li>Ideated and created a low-fidelity prototype</li>
+    <li>Created complex and performant scroll animations</li>
+    <li>Delivered the whole project in 2 weeks</li>
+  </ul>
+</Card>

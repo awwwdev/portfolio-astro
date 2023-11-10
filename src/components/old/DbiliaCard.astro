@@ -1,0 +1,36 @@
+---
+import Card from '../old/Card.astro';
+import StackLogo from './StackLogo.astro';
+---
+
+<Card
+  logoSrc='/dbilia/logo.png'
+  darkLogoSrc='/dbilia/logo.png'
+  color='c-violet11'
+  bg='bg-violet4'
+  bg='bg-gradient-to-br from-violet4 via-blue4 to-cyan4'
+  title='DBILIA'
+  href='/works/dbilia'
+>
+  <div class='dispaly-contents' slot='subtitle'>
+    Refactoring
+    <br /> the Unreadable
+  </div>
+  <div slot='stack' class='display-contents'>
+    <li class='w-[2.5em] h-[2.5em] rd-full flex jc ac bg-grayA-3'>
+      <img src='/sc-logo2.png' alt='Styled Components' class='w-[1.2em] h-[1.2em] ' />
+    </li>
+    <StackLogo icon='i-logos-sass' title='Sass and CSS' />
+    <StackLogo icon='i-logos-react' title='Sass and CSS' />
+    <StackLogo icon='i-logos-figma' title='Figma' />
+    <img
+      slot='showcase'
+      src='/dbilia/mockup.png'
+      alt=''
+      class={`lt-xs:(static  w-4/5 mis-auto -mb-26 -mt-10 fade-y-from-40%-to-70% )  xs:abs  -z-1  xs:(w-40 right-0 top-0 ) sm:(-right-0 -top-0 w-60)  md:(-right-15 -top-5 w-80) drop-shadow-2xl `}
+    />
+  </div>
+  <ul slot='description'>
+
+  </ul>
+</Card>

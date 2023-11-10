@@ -1,0 +1,16 @@
+---
+import { Markdown  } from '@astropub/md'
+const {title , slug } = Astro.props;
+---
+
+<a
+ href={`/tips/${slug}`}
+ class=''
+>
+<article class='flex flex-col gap-4 min-w-80 p-6 block b-1 b-gray7 rd-2xl bg-gradient-to-l from-gray3 '>
+  <h3 class='H3'>
+    <Markdown.Inline of={title} />
+  </h3>
+  
+</article>
+</a>

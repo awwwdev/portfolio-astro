@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  logoSrc: string;
+  darkLogoSrc: string;
+  href: string;
+  // subtitle: React.ReactNode;
+  // children?: React.ReactNode;
+  // stack: React.ReactNode;
+  bg?: string;
+  color?: string;
+}
+
+const { logoSrc = '', darkLogoSrc = '', title = '', href, color = 'c-violet11', bg = 'bg-violet4' } = Astro.props; // btnColor="bg-violet6"
+---
+
+<a href={href} class={`block  `}>
+  <article class={`rd-6 overflow-hidden min-h-80   b-1 b-grayA-2 bg-origin-border  p-8 flex flex-col ${bg}`}>
+    <div>
+      <img src={darkLogoSrc} alt={title} class='display-none dark:block h-4 w-auto lt-sm:mt-1' />
+      <img src={logoSrc} alt={title} class='dark:display-none h-4 w-auto lt-sm:mt-1' />
+    </div>
+    <h3 class={`mt-4 block H3 text-3xl fw-900 ${color} `}>
+      <span class='sr-only'>{title} ,</span>
+      <slot name='subtitle' />
+    </h3>
+    <slot name='stack' />
+  </article>
+</a>

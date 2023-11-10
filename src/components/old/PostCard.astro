@@ -1,0 +1,17 @@
+---
+const props = Astro.props;
+const post = props.post;
+---
+
+<div class='mb-8'>
+  <h2 class='text-xl'>
+    <!-- <a href={`/works/${post.slug}`} class='text-blue-700 hover:text-blue-900'> -->
+      {post.title}
+    <!-- </a> -->
+  </h2>
+  <!-- <time datetime={post.date} class='block text-xs text-gray-600 mb-2'>
+    {format(parseISO(post.date), 'LLLL d, yyyy')}
+  </time> -->
+  {/* <div class="text-sm" dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
+  <!-- <MDXContent components={{ MyButton }} /> -->
+</div>
