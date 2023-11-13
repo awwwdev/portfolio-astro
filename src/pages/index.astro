@@ -10,41 +10,69 @@ import Emoji from '../components/current/Emoji.astro';
 import About from '../components/current/About.astro';
 import BlogSection from '../components/current/BlogSection.astro';
 import TipsSection from '../components/current/TipsSection.astro';
+import UIGrid from '../components/current/UIGrid.astro';
+import DarsoonProjectStory from '../components/current/DarsoonProjectStory.astro';
+import MomentaProjectStory from '../components/current/MomentaProjectStory.astro';
+import DbiliaProjectStory from '../components/current/DbiliaProjectStory.astro';
 ---
 
 <GlobalLayout>
   <div class=''>
-    <section aria-label='introduction' class='rd-xl py-8 min-h-80 max-w-page mx-auto sm:px-8 px-4'>
+    <div class='h-20'></div>
+    <section aria-label='introduction' class='rd-xl max-w-page mx-auto sm:px-8 px-4'>
       <Intro />
+      <div class='h-20'></div>
+      <UIGrid />
+      <div class='h-10'></div>
+      <p>
+        I help businesses to discover their visual language, create wireframes, make high fidelity UI prototypes and
+        develop it into production.
+      </p>
     </section>
-    <section aria-label='Works' id='works' class='mt-50 rd-xl max-w-page mx-auto'>
-      <div class='flex gap-1 items-baseline sm:px-8 px-4'>
-        <h2 class='H1'>Works</h2>
-        <Emoji name='fire' />
-      </div>
-      <ul class='mt-20 space-y-12 sm:space-y-32'>
-        <DarsoonCard />
-        <DbiliaCard />
-        <MomentaCard />
+    <div class='h-20'></div>
+    <section aria-label='Works' id='works' class='rd-xl max-w-page mx-auto'>
+      <h2 class='H1'>Works</h2>
+      <div class='h-6'></div>
+      <ul class='h-130 grid grid-cols-2 grid-rows-14 gap-6'>
+        <li style='grid-column: 1/2; grid-row: 1/7' class='grid'>
+          <DarsoonProjectStory />
+        </li>
+        <li style='grid-column: 1/2; grid-row: 7/15' class='grid'>
+          <DbiliaProjectStory />
+        </li>
+        <li style='grid-column: 2/3; grid-row: 1/10' class='grid'>
+          <MomentaProjectStory />
+        </li>
+        <li style='grid-column: 2/3; grid-row: 10/15' class='grid'>
+          <a href='/#contact' class='grid'>
+            <div class='bg-gray2 rounded-xl p-6 flex flex-col'>
+              <p class='font-heading'>Let&apos;s make the next success story together</p>
+              <div
+                class='self-end mt-auto p-4 rd-full bg-grayA-3 b-1 b-grayA-6 w-14 h-14 flex items-center justify-center'
+              >
+                <span class='inline-block i-ph-arrow-right'></span>
+              </div>
+            </div>
+          </a>
+        </li>
       </ul>
     </section>
-    <section aria-label='Toolkit' id='toolkit' class='mt-50 rd-xl max-w-page mx-auto'>
+    <div class='h-20'></div>
+    <section aria-label='Toolkit' id='toolkit' class='rd-xl max-w-page mx-auto'>
       <Toolkit />
     </section>
-    <section aria-label='Blog' id='blog' class='my-50 rd-xl'>
+    <div class='h-20'></div>
+
+    <section aria-label='Blog' id='blog' class='rd-xl'>
       <BlogSection />
     </section>
-     <section aria-label='Blog' id='blog' class='my-50 rd-xl'>
+    <div class='h-20'></div>
+    <section aria-label='Blog' id='blog' class='rd-xl'>
       <TipsSection />
     </section>
-    <section
-      slot='about'
-      aria-label='About me'
-      id='about'
-      class='my-50 rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'
-    >
+    <div class='h-20'></div>
+    <section slot='about' aria-label='About me' id='about' class='rd-xl space-y-4 max-w-page mx-auto sm:px-8 px-4'>
       <About />
     </section>
   </div>
 </GlobalLayout>
-

@@ -5,13 +5,12 @@ import '../styles/reset.css';
 import 'uno.css';
 import '../styles/globals.css';
 import BaseHead from '../components/BaseHead.astro';
-import ThemeToggler from '../components/ThemeToggler.astro';
 import GetInTouch from '../components/old/GetInTouch.astro';
 const { title = null, description = null } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en' data-theme='light' class='light'>
+<html lang='en' data-theme='dark' class='dark'>
   <head>
     <BaseHead pageTitle={title} pageDescription={description} />
     <script>
@@ -27,7 +26,7 @@ const { title = null, description = null } = Astro.props;
           <a href='/' class='c-gray11' aria-label='Home'>
             <img class='dark:filter-invert' src='/icons/home.svg' height={18} width={18} />
           </a>
-          <ThemeToggler />
+          <span class="i-ph-list"></span>
         </nav>
       </header>
       <main id='main-content'>
