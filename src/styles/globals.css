@@ -8,6 +8,17 @@
   /* font-optical-sizing:  */
 }
 
+ @font-face {
+  font-family: "Nohemi";
+  src: url("../fonts/nohemi/Nohemi-Bold.ttf") format("woff2-variations");
+  font-weight: 700;
+  /* font-stretch: 125%; */
+  font-style: normal;
+  /* font-variation-settings: 'wght' 100; */
+  /* font-optical-sizing:  */
+}
+
+
 
 :root {
   --header-height: 2.5em;
@@ -63,7 +74,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Sora', 'Inter', 'Roboto', system-ui, sans-serif;
+  font-family: 'Nohemi', 'Sora', 'Inter', 'Roboto', system-ui, sans-serif;
 }
 
 html {
