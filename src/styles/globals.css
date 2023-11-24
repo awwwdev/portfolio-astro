@@ -159,3 +159,35 @@ img {
 .astro-code ::selection {
   background: rgb(122, 33, 15);
 }
+
+
+
+/* STYLE SCROLL BARS  ================================================ */
+
+.scroll-bar-short::-webkit-scrollbar-track {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+/* END OF SCROLL BARS  ================================================ */
+
+.\?\?\? {
+  outline: 3px solid rgba(255, 0, 195, 0.237);
+  outline-offset: -1px;
+}
+
+.\?\?\?\? {
+  outline: 2px dashed rgba(0, 229, 255, 0.345);
+  outline-offset: -1px;
+}
+
+.\?\?\?\?\? {
+  outline: 2px dotted rgba(255, 251, 0, 0.237);
+  outline-offset: -1px;
+}
+
+.\?\?\?\?\?\? {
+  outline: 2px dotted rgba(0, 255, 4, 0.237);
+  outline-offset: -1px;
+}
