@@ -147,3 +147,54 @@ img {
 .astro-code ::selection {
   background: rgb(122, 33, 15);
 }
+
+/* ===== */
+
+/* for Firefox */
+.hide-scrollbars {
+  /* scrollbar-width: thin; */
+  scrollbar-color: transparent transparent;
+}
+
+/* for the rest */
+.hide-scrollbars::-webkit-scrollbar {
+  width: 0;
+  height: 0; /* The height is only seen on horizontal scrolling */
+}
+
+.hide-scrollbars::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 0;
+}
+
+.hide-scrollbars::-webkit-scrollbar-track:hover {
+  background: transparent; 
+    padding: 0;
+}
+
+.hide-scrollbars::-webkit-scrollbar-thumb {
+  background-color: transparent; 
+}
+
+@media (min-width: 80rem) {
+  
+  .fade-x {
+    --jh-fade-x-margin: 2%;
+    --jh-fade-x-padding: 25%;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent var(--jh-fade-x-margin),
+      black var(--jh-fade-x-padding),
+      black calc(100% - var(--jh-fade-x-padding)),
+      transparent calc(100% - var(--jh-fade-x-margin))
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent var(--jh-fade-x-margin),
+        black var(--jh-fade-x-padding),
+        black calc(100% - var(--jh-fade-x-padding)),
+        transparent calc(100% - var(--jh-fade-x-margin))
+        );
+      }
+    }
+

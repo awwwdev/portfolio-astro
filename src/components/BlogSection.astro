@@ -1,10 +1,10 @@
 ---
-import { getCollection  } from 'astro:content';
-import type { CollectionEntry} from 'astro:content';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { formatTimeAgo } from '../util/formatter';
 const posts = await getCollection('blog');
 
-type PostType = CollectionEntry<"blog">;
+type PostType = CollectionEntry<'blog'>;
 ---
 
 <div class='flex gap-1 items-baseline mb-20 max-w-page mx-auto sm:px-8 px-4'>
@@ -12,31 +12,31 @@ type PostType = CollectionEntry<"blog">;
   <!-- <Emoji name='dino' /> -->
 </div>
 
-<ul class='flex gap-8 c-gray11 overflow-x-auto pb-8 scroll_pranet'>
+<ul class='flex gap-8 c-gray11 overflow-x-auto pb-8 scroll_pranet hide-scrollbars fade-x'>
   {
-    [...posts.filter(post => !post.data.draft)]
-    .sort((p1:PostType , p2: PostType) => p2.data.date.getTime() - p1.data.date.getTime())
-    .map((post) => {
-    console.log("🚀 ~ post:", post.data.date.getTime())
-      
-      return (
-        <li class='p-8 b-1 b-gray5 rd-2xl mis_page-first-child  mis_page-last-child bg-gradient-to-r from-gray-2/50  '>
-          <article class='flex flex-col gap-4 min-w-80 min-h-80'>
-            <div class=''>
-              <h2 class='H2'>{post.data.title}</h2>
-              <p class="mt-4">{post.data.subtitle}</p>
-              <time class='mt-2 c-gray11 text-xs block '>{formatTimeAgo(post.data.date)}</time>
-            </div>
-            <a
-              href={`/blog/${post.slug}`}
-              class='flex-self-end mt-auto mis-auto w-fit inline-block af-i-ph-arrow-right b-1 b-gray7 rd-xl px-12 py-3 !c-gray12 bg-gradient-to-l from-gray3 '
-            >
-              Read More
+    [...posts.filter((post) => !post.data.draft)]
+      .sort((p1: PostType, p2: PostType) => p2.data.date.getTime() - p1.data.date.getTime())
+      .map((post) => {
+        console.log('🚀 ~ post:', post.data.date.getTime());
+
+        return (
+          <li class='p-8 b-1 b-gray5 rd-3xl mis_page-first-child  mis_page-last-child bg-gradient-to-r from-gray-100/40 to-transparent  '>
+            <a href={`/blog/${post.slug}`}>
+              <article class='flex flex-col gap-4 min-w-80 min-h-80'>
+                <div class=''>
+                  <h2 class='H2'>{post.data.title}</h2>
+                  <p class='mt-4'>{post.data.subtitle}</p>
+                  <time class='mt-2 c-gray11 text-xs block '>{formatTimeAgo(post.data.date)}</time>
+                </div>
+                <div class='flex-self-end mt-auto mis-auto w-fit inline-block  b-1 b-gray7 rd-xl px-4 py-3 !c-gray12  flex justify-center items-center'>
+                  <span class='af-i-ph-arrow-right' />
+                  <span class='sr-only'>Read More</span>
+                </div>
+              </article>
             </a>
-          </article>
-        </li>
-      );
-    })
+          </li>
+        );
+      })
   }
 </ul>
 <style>
